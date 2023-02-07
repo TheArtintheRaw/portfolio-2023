@@ -85,6 +85,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills: Skill[] = await fetchSkills();
   const socials: Social[] = await fetchSocials();
 
+  if (!pageInfo) {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
     props: {
       pageInfo,
@@ -93,6 +99,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       socials
     },
-    revalidate: 60,
+    revalidate: 10,
   }
 }
