@@ -16,7 +16,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "../*": ["./*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "profile-2023/sanity.config.js", "profile-2023/schemas/experience.js", "profile-2023/schemas/index.js", "profile-2023/schemas/pageInfo.js", "profile-2023/schemas/project.js", "profile-2023/schemas/skill.js", "profile-2023/schemas/social.js", "profile-2023/sanity.cli.js"],
