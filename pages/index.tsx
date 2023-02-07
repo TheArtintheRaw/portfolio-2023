@@ -60,7 +60,7 @@ const Home: NextPage<Props> = ( {pageInfo, experiences, projects, skills, social
 
       {/* Contact */}
       <section id="contact" className="snap-start">
-        <ContactMe name={""} email={""} subject={""} message={""} />
+        <ContactMe />
       </section>
 
       <Link href="#hero">

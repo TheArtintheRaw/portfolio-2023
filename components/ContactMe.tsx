@@ -10,7 +10,10 @@ type Inputs = {
   message: string;
 };
 
-export default function ContactMe({}: Inputs) {
+type Props = {
+}
+
+export default function ContactMe({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {window.location.href = `mailto:theartintheraw@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;};
@@ -25,11 +28,10 @@ export default function ContactMe({}: Inputs) {
 
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
-          Your{" "}
+          Roger Andrews - {" "}
           <span className="underline decoration-[#F9A50A]/60">
-            Front-End Dev
+            Front-End Developer.
           </span>{" "}
-          .
         </h4>
 
         <div className="space-y-10">
