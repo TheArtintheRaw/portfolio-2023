@@ -23,7 +23,7 @@ type Props = {
   socials: Social[];
 }
 
-const Home = ( {pageInfo, experiences, projects, skills, socials}: Props) => {
+const Home: NextPage<Props> = ( {pageInfo, experiences, projects, skills, socials}: Props) => {
   return (
     <div className="bg-gray-900 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F9A50A]/80">
       <Head>
@@ -83,12 +83,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects: Project[] = await fetchProjects();
   const skills: Skill[] = await fetchSkills();
   const socials: Social[] = await fetchSocials();
-
-  if (!pageInfo) {
-    return {
-      notFound: true,
-    }
-  }
 
   return {
     props: {
