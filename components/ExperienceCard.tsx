@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { urlFor } from "@/sanity";
 import { Experience } from "@/typings";
+import Image from "next/image";
 
 type Props = {
   experience: Experience;
@@ -32,10 +33,11 @@ export default function ExperienceCard({ experience }: Props) {
         <p className="font-bold text-2xl mt-1">{experience?.companyName}</p>
         <div className="flex space-x-2 my-2">
           {experience.technologies.map((technology) => (
-            <img
+            <Image
             key={technology._id}
             className="h-10 w-10 rounded-full"
             src={urlFor(technology.image).url()}
+            alt="technology"
             />
           ))}
         </div>
@@ -48,8 +50,8 @@ export default function ExperienceCard({ experience }: Props) {
         </p>
 
         <ul className="list-disc space-y-4 ml-5 text-sm max-h-56 w-4/5 pr-5 overflow-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F9A50A]/80">
-          {experience.points.map((point) => (
-            <li key={experience._id}>{point}</li>
+          {experience.points.map((point, i) => (
+            <li key={i}>{point}</li>
           ))}
         </ul>
       </div>

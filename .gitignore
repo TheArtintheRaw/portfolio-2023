@@ -12,7 +12,7 @@
 /.next/
 /out/
 
-sanity/node_modules
+profile-2023/node_modules
 
 # production
 /build
@@ -36,3 +36,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel

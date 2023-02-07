@@ -14,7 +14,7 @@ import { fetchExperiences } from "@/utils/fetchExperiences";
 import { fetchProjects } from "@/utils/fetchProjects";
 import { fetchSkills } from "@/utils/fetchSkills";
 import { fetchSocials } from "@/utils/fetchSocials";
-
+import Image from "next/image";
 
 type Props = {
   experiences: Experience[];
@@ -28,7 +28,7 @@ const Home = ( {pageInfo, experiences, projects, skills, socials}: Props) => {
   return (
     <div className="bg-gray-900 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F9A50A]/80">
       <Head>
-        <title>Roger's Portfolio</title>
+        <title>{pageInfo?.name} - Portfolio</title>
       </Head>
 
       {/* Header */}
@@ -61,13 +61,13 @@ const Home = ( {pageInfo, experiences, projects, skills, socials}: Props) => {
 
       {/* Contact */}
       <section id="contact" className="snap-start">
-        <ContactMe />
+        <ContactMe name={""} email={""} subject={""} message={""} />
       </section>
 
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            <img className="rounded-full h-10 w-10 filter blur hover:blur-0 cursor-pointer" src="pfp.jpg" alt="Roger" />
+            <Image className="rounded-full h-10 w-10 filter blur hover:blur-0 cursor-pointer" src="pfp.jpg" alt="Roger" />
             <p>Back Top</p>
           </div>
         </footer>
