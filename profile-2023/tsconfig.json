@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "sanity.config.js", "schemas/experience.js", "schemas/index.js", "schemas/pageInfo.js", "schemas/project.js", "schemas/skill.js", "schemas/social.js"],
+  "include": ["**/*.ts", "**/*.tsx", "sanity.config.js", "schemas/experience.js", "schemas/index.js", "schemas/pageInfo.js", "schemas/project.js", "schemas/skill.js", "schemas/social.js", "sanity.cli.js"],
   "exclude": ["node_modules"]
 }

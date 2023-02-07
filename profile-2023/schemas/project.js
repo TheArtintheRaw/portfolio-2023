@@ -1,17 +1,15 @@
-import {defineField, defineType} from 'sanity'
-
-export default defineType({
+export default ({
   name: 'project',
   title: 'Project',
   type: 'document',
   fields: [
-    defineField({
+    ({
       name: 'title',
       title: 'Title',
       description: 'Title of the project',
       type: 'string',
     }),
-    defineField({
+    ({
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -19,12 +17,12 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
+    ({
       name: 'summary',
       title: 'Summary',
       type: 'text',
     }),
-    defineField({
+    ({
       name: 'technologies',
       title: 'Technologies',
       type: 'array',
@@ -35,7 +33,7 @@ export default defineType({
         },
       ],
     }),
-    defineField({
+    ({
       name: 'linkToBuild',
       title: 'Linktobuild',
       type: 'url',
