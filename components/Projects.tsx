@@ -4,7 +4,7 @@ import { Project } from "@/typings";
 import { urlFor } from "@/sanity";
 
 type Props = {
-  projects: Project[]
+  projects: Project[];
 };
 
 export default function Projects({ projects }: Props) {
@@ -27,27 +27,32 @@ export default function Projects({ projects }: Props) {
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandator z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F9A50A]/80">
         {projects?.map((project, i) => (
-          <div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 justify-center p-20 md:p-44 h-screen">
+          <div
+            key={project._id}
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 justify-center p-20 md:p-44 h-screen"
+          >
             <motion.img
-            initial={{
+              initial={{
                 y: -300,
                 opacity: 0,
-            }}
-            transition={{ duration: 1.2 }}
-            whileInView={{
+              }}
+              transition={{ duration: 1.2 }}
+              whileInView={{
                 y: 0,
                 opacity: 1,
-            }}
-            viewport={{ once: true}}
-            src={urlFor(project.image).url()}
-            alt=""
-            className="h-[375px] w-[666px] object-cover self-center" />
+              }}
+              viewport={{ once: true }}
+              src={urlFor(project.image).url()}
+              alt=""
+              className="h-[375px] w-[666px] object-cover self-center"
+            />
 
             <div className=" space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
-                <span className="underline decoration-[#f9a50a]/60">Project {i + 1} of {projects.length}:
+                <span className="underline decoration-[#f9a50a]/60">
+                  Project {i + 1} of {projects.length}:
                 </span>{" "}
-                 {project?.title}
+                {project?.title}
               </h4>
 
               <p className="text-lg text-center">{project?.summary}</p>
