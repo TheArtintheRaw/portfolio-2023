@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -8,7 +8,7 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Link from "next/link";
-import { Experience, PageInfo, Project, Skill, Social } from "../typings"
+import { Experience, PageInfo, Project, Skill, Social } from "../typings";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchProjects } from "../utils/fetchProjects";
@@ -21,9 +21,9 @@ type Props = {
   skills: Skill[];
   pageInfo: PageInfo;
   socials: Social[];
-}
+};
 
-const Home: NextPage<Props> = ( {pageInfo, experiences, projects, skills, socials}: Props) => {
+const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
     <div className="bg-gray-900 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F9A50A]/80">
       <Head>
@@ -40,7 +40,7 @@ const Home: NextPage<Props> = ( {pageInfo, experiences, projects, skills, social
 
       {/* About */}
       <section id="about" className="snap-center">
-        <About pageInfo={pageInfo}/>
+        <About pageInfo={pageInfo} />
       </section>
 
       {/* Experience */}
@@ -55,7 +55,7 @@ const Home: NextPage<Props> = ( {pageInfo, experiences, projects, skills, social
 
       {/* Projects */}
       <section id="projects" className="snap-start">
-        <Projects projects={projects}/>
+        <Projects projects={projects} />
       </section>
 
       {/* Contact */}
@@ -66,7 +66,11 @@ const Home: NextPage<Props> = ( {pageInfo, experiences, projects, skills, social
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="relative flex items-center justify-center">
-            <img className="rounded-full h-10 w-10 filter blur hover:blur-0 cursor-pointer" src="pfp.jpg" alt="Roger" />
+            <img
+              className="rounded-full h-10 w-10 filter blur hover:blur-0 cursor-pointer"
+              src="pfp.jpg"
+              alt="Roger"
+            />
             <p>Back Top</p>
           </div>
         </footer>
@@ -90,8 +94,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       experiences,
       projects,
       skills,
-      socials
+      socials,
     },
     revalidate: 10,
-  }
-}
+  };
+};
