@@ -4,9 +4,14 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
 export default defineConfig({
-  projectId: 'thjxie6p',
+  name: 'default',
+  title: 'sanity',
+
+  projectId: '30g94mqk',
   dataset: 'production',
+
   plugins: [deskTool(), visionTool()],
+
   schema: {
     types: schemaTypes,
   },

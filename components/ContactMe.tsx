@@ -2,7 +2,6 @@ import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-
 type Inputs = {
   name: string;
   email: string;
@@ -10,15 +9,14 @@ type Inputs = {
   message: string;
 };
 
-type Props = {
-}
+type Props = {};
 
 export default function ContactMe({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (formData) => {window.location.href = `mailto:theartintheraw@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;};
-
-
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:theartintheraw@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
+  };
 
   return (
     <div className="h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
@@ -28,7 +26,7 @@ export default function ContactMe({}: Props) {
 
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
-          Roger Andrews - {" "}
+          Roger Andrews -{" "}
           <span className="underline decoration-[#F9A50A]/60">
             Front-End Developer.
           </span>{" "}
