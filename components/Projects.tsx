@@ -19,17 +19,17 @@ export default function Projects({ projects }: Props) {
       transition={{
         duration: 1.5,
       }}
-      className="h-screen relative flex flex-col overflow-hidden text-center max-w-full justify-evenly mx-auto items-center z-0"
+      className="h-screen relative flex flex-col overflow-hidden text-center max-w-full justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl z-21">
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandator z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F9A50A]/80">
+      <div className="relative w-full flex overflow-x-scroll justify-start pl-36 overflow-y-hidden snap-x snap-mandator z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F9A50A]/80">
         {projects?.map((project, i) => (
           <div
             key={project._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 justify-center p-20 md:p-44 h-screen"
+            className="w-lg flex-shrink-0 snap-center flex flex-col space-y-5 justify-center items-center p-20 md:p-44 h-screen"
           >
             <motion.img
               initial={{
@@ -44,7 +44,7 @@ export default function Projects({ projects }: Props) {
               viewport={{ once: true }}
               src={urlFor(project.image).url()}
               alt=""
-              className="h-[375px] w-[666px] object-cover self-center"
+              className="h-[375px] w-[666px] object-cover"
             />
 
             <div className=" space-y-10 px-0 md:px-10 max-w-6xl">
